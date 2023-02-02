@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getByCategoryThunk } from '../store/slices/products.slice';
 import { useNavigate } from 'react-router-dom';
 
-const ShowReleated = ({product}) => {
+const ShowReleated = ({}) => {
     const products = useSelector(state => state.products);
     const dispatch = useDispatch();  
     const navigate = useNavigate();

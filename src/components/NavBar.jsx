@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Offcanvas } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import Cart from './Cart';
 
 const NavBar = ({ Logo }) => {
 
@@ -23,16 +24,7 @@ const NavBar = ({ Logo }) => {
                         <Offcanvas.Title>Carrito de compras</Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
-                        <div>
-                            <div>
-
-                            </div>
-                            <div>
-                                <span>Total</span>
-                                <span>$1500</span>
-                            </div>
-                            <button>Checkout</button>
-                        </div>
+                            <Cart/>
                     </Offcanvas.Body>
                 </Offcanvas>
             </>

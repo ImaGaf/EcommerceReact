@@ -7,22 +7,25 @@ import { getByCategoryThunk, getProductsThunk } from '../store/slices/products.s
 import ShowReleated from './ShowReleated';
 
 const Product = () => {
+
+    const products = useSelector(state => state.products)
     
     const { id } = useParams();
     const navigate = useNavigate();
     const [product, setProduct] = useState();
+    const [url,setUrl] = useState("")
     const [Quantity, setQuantity] = useState(1);
     const dispatch = useDispatch();
 
     useEffect(() => {
         axios.get(`https://e-commerce-api-v2.academlo.tech/api/v1/products/${id}`)
             .then(res => setProduct(res.data))
-            releatedProduct();
-    }, [product])
+    }, [id])
 
-    const releatedProduct = () => {
+    useEffect(()=>{
         dispatch(getByCategoryThunk(`${product?.category?.id}`));
-    }
+        setUrl(`${product?.images[0].url}`)
+    },[product])
 
     return (
         <div className='show-product'>
@@ -32,7 +35,7 @@ const Product = () => {
                         <span onClick={() => navigate("/")} >Home</span>
                         <i className='bx bxs-circle'></i> {product?.title}
                     </h6>
-                    <Carrousel product={product} />
+                    <Carrousel product={product} url={url} setUrl={setUrl} />
                 </div>
                 <div className='product-info'>
                     <div className='main-info'>

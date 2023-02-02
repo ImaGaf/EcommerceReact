@@ -27,7 +27,7 @@ const Purchases = () => {
 
                 {
                     favorites.map(favorite => (
-                        <div className='purchase-item' key={favorite.title}>
+                        <div className='purchase-item' key={favorite.id}>
                             <div className='purchase-date'>
                                 <p>{favorite.createdAt.slice(0, 10)}</p>
                             </div>
