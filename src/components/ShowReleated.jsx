@@ -1,40 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+import { getByCategoryThunk } from '../store/slices/products.slice';
 import { useNavigate } from 'react-router-dom';
-import { getByBrandThunk, getByCategoryThunk, getProductsThunk } from '../store/slices/products.slice';
 
-const ProductList = () => {
-
+const ShowReleated = ({product}) => {
     const products = useSelector(state => state.products);
-    const dispatch = useDispatch();
+    const dispatch = useDispatch();  
     const navigate = useNavigate();
-    const [searchBrand,setSearchBrand]= useState('')
-
-    useEffect(() => {
-        dispatch(getProductsThunk());
-    },[])
-
-    const getByBrand = () => {
-        if(searchBrand == "") {
-            dispatch(getProductsThunk());
-        }else{
-            dispatch(getByBrandThunk(searchBrand))
-        }
-    }
-    
 
     return (
-        <div className='product-list'>
-            <div className='look-for'>
-                <input type="text" placeholder='What are you looking for?' value={searchBrand} onChange = {e => setSearchBrand(e.target.value)}/>
-                <button onClick={ ()=> getByBrand()}><i className='bx bx-search'></i></button>
-            </div>
+        <div className='releated-products'>
+            <h1 className= "releated-title">Discover Similar Items</h1>
             <Row xs={1} md={3} className="g-4">
                 {
                     products.map((productItem) => (
                         <Col key={productItem.id}>
-                            <Card  onClick={()=>navigate(`/Product/${productItem.id}`)} className='card' key={productItem.id} >
+                            <Card  onClick={()=> navigate(`/Product/${productItem.id}`)} className='card' key={productItem.id} >
                                 <div className='image-container'>
                                     <Card.Img className='image' variant="top" src={productItem.images[0].url} />
                                 </div>
@@ -52,4 +34,4 @@ const ProductList = () => {
     );
 };
 
-export default ProductList;
+export default ShowReleated;

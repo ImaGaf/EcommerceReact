@@ -2,7 +2,18 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  text-decoration: none;
+} 
 
+.entire-home-page{
+  padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+li{
+  list-style: none;
+  cursor: pointer;
 }
 
 .image-container{
@@ -69,7 +80,6 @@
   color: white;
 }
 .nav-bar{
-  margin-bottom: 2rem;
   height: 70px;
   display: flex;
   border-bottom: 1px solid rgba(128,128,128,0.439);
@@ -150,3 +160,254 @@
   color: white;
   background-color: rgb(235, 76, 76);
 }
+
+.single-product{
+  display: flex;
+}
+
+.show-product{
+  padding: 1rem;
+}
+
+.releated-products{
+  padding: 3rem;
+}
+
+.releated-title{
+  color: rgb(235, 76, 76);
+  font-size: 19px;
+  padding: 0 0 2rem 0;
+  margin-left: -1.5rem;
+
+}
+
+.product-info{
+  padding: 5rem;
+  width: 50%;
+}
+
+.carrousel-container{
+  position: relative;
+  padding:0 3rem 0;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrousel-container > h6{
+  font-weight: bold;
+  color: rgb(97, 97, 97);
+  position:absolute;
+  top: 10px;
+  left: 40px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.carrousel-container > h6 > span{
+  font-weight: lighter;
+  color:  gray;
+}
+
+.bxs-circle{
+  padding-top: 4px;
+  font-size: 7px;
+  margin: 0 0.7rem;
+  color: red;
+  display: flex;
+  align-items: center;
+}
+
+.main-info{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.main-info > span{
+  color: gray;
+}
+.main-info > h3{
+  font-size: 24px;
+  padding-left: 1rem;
+  color: rgb(71, 71, 71);
+}
+.main-info > p {
+  font-size: 14px;
+  font-weight:500;
+  color: rgb(74, 74, 74);
+}
+
+.info-button{
+  margin-top: 1rem;
+  display: flex;
+  gap: 4rem;
+  justify-content: space-around;
+}
+
+.info-button > div{
+  display: flex;
+  flex-direction: column;
+  color: gray;
+  font-weight: bold;
+}
+
+.price{
+  color: rgb(79, 79, 79);
+  padding-left: 1rem;
+  padding-top: 0.7rem;
+}
+
+.quantity-container{
+  text-align: center;
+}
+
+.quantity-button{
+  border: 1px solid gray;
+  background-color: white;
+  height: 30px;
+  width: 30px;
+}
+
+.quantity{
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.quantity-number{
+  height: 30px;
+  width: 40px;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  margin-top: 1rem;
+}
+
+.add-to{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color:rgb(235, 76, 76);
+  border: none;
+  color: white;
+  margin-top: 1rem;
+}
+
+.carrousel{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 90%;
+}
+
+.image-min{
+  margin-top: 3rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-around;
+  align-items: center;
+  width: 200px;
+  height: 70px;
+}
+
+.image-min > img{
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.image-big{
+
+  display: flex;
+  align-items: center;
+  height: 300px;
+  width: 90%;
+}
+
+.image-big > button{
+  border-radius: 50%;
+  width: 60px;
+  height: 50px;
+  border: none;
+  color: white;
+  background-color: rgb(235, 76, 76);
+}
+
+.img-container{
+  width: 70%;
+  max-height: 80%;
+  display: flex;
+  overflow: hidden;
+  margin: 0 2rem;
+}
+
+.img-container > img{
+  width: 100%;
+}
+
+
+/*Login*/
+
+.login-container{
+  margin-top: 0;
+  width: 100%;
+  height: 110vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+}
+
+.login-card{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 35%;
+}
+
+.login-card > h3{
+  font-size: 24px;
+  color: rgb(66, 66, 66);
+}
+
+.submit{
+
+  width: 100%;
+  padding: 0.5rem 0;
+  background-color: rgb(235, 76, 76);
+  color: white;
+  border: none;
+  margin-bottom: 1rem;
+}
+
+.test{
+  background-color: rgba(206, 235, 255, 0.747);
+  margin: 1rem 0;
+  border-radius: 10px;
+  padding: 1rem 0 0 1rem;
+}
+
+.test > h3{
+  text-align: center;
+  font-size: 20px;
+  color: rgb(66, 66, 66);
+}
+
+.bx-envelope, .bx-lock-alt{
+  padding-right: 0.5rem;
+  font-size: 22px;
+  color: rbg(66,66,66);
+}
+

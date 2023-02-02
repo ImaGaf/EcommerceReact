@@ -13,8 +13,20 @@ export const productsSlice = createSlice({
     }
 })
 
+
+
 export const getProductsThunk = () => dispatch => {
     axios.get("https://e-commerce-api-v2.academlo.tech/api/v1/products")
+    .then(res => dispatch(setProducts(res.data)))
+}
+
+export const getByBrandThunk = (searchBrand) => dispatch => {
+    axios.get(`https://e-commerce-api-v2.academlo.tech/api/v1/products?title=${searchBrand}`)
+    .then(res => dispatch(setProducts(res.data)))
+}
+
+export const getByCategoryThunk = (searchBrand) => dispatch => {
+    axios.get(`https://e-commerce-api-v2.academlo.tech/api/v1/products?categoryId=${searchBrand}`)
     .then(res => dispatch(setProducts(res.data)))
 }
 
