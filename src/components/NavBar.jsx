@@ -19,7 +19,7 @@ const NavBar = ({ Logo }) => {
     return (
         <div className='nav-bar'>
             <>
-                <Offcanvas show={show} onHide={handleClose}>
+                <Offcanvas placement='end' show={show} onHide={handleClose}>
                     <Offcanvas.Header closeButton>
                         <Offcanvas.Title>Carrito de compras</Offcanvas.Title>
                     </Offcanvas.Header>

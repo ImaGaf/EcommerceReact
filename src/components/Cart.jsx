@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 const Cart = () => {
+
+    const dispatch = useDispatch();
+
+    useEffect(()=>{
+        
+    },[])
+
     return (
-        <div>
-            <div>
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, itaque quod dignissimos necessitatibus at mollitia corporis suscipit numquam aperiam quidem sint cupiditate laboriosam in ipsa! Eum dignissimos dicta assumenda exercitationem incidunt! Molestias cum magnam aut quia, soluta dolore nisi optio, quam animi, fuga impedit incidunt placeat nihil nesciunt amet libero!</span>
+        <div className='cart-container'>
+            <div className='cart-brand'>
+                <span>Apple</span>
+                <i className='bx bx-trash'></i>
             </div>
-            <div className=' price'>
-                <span>Total</span>
+            <div className='cart-product'>
+                <p>2021 Apple Mac</p>
+                <span>1</span>
+            </div>
+            <p className='cart-product-price'> <span>Total:</span> $ 1500</p>
+            <div className='price'>
+                <p>Total</p>
                 <span>$1500</span>
             </div>
             <button>Checkout</button>

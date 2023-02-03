@@ -30,6 +30,11 @@ export const getByCategoryThunk = (searchBrand) => dispatch => {
     .then(res => dispatch(setProducts(res.data)))
 }
 
+export const geCartThunk = () => dispatch =>{
+    axios.get(`https://e-commerce-api-v2.academlo.tech/api/v1/cart`)
+    .then(res=> dispatch(setProducts(res.data)))
+}
+
 export const {setProducts} = productsSlice.actions;
 
 export default productsSlice.reducer;
